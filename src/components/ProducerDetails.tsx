@@ -1,4 +1,4 @@
 
 export const ProducerDetails = () => {
-    
+    return <></>
 }
