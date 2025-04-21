@@ -22,6 +22,10 @@ export function useHttp<T>(url: string, method: HttpMethod){
             // data.forEach((e: any) => console.log(e));
             setData(result.data);
             
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 406c578b17aba53b5dcd34211c6ab0ec617218a6
         } catch(error) {
             setIsLoading(false);
             setIsError('error while fetching data');

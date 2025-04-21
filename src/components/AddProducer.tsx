@@ -3,6 +3,7 @@ import { Producer } from "../types/Producer";
 import { toast } from "react-toastify";
 
 export const AddProducer = () => {
+<<<<<<< HEAD
     const { request } = useHttp<Producer>('/producer', 'post');
 
     const createProducer = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -40,3 +41,9 @@ export const AddProducer = () => {
         </form>
     );
 };
+=======
+    return <>
+        <form action=""></form>
+    </>
+}
+>>>>>>> 406c578b17aba53b5dcd34211c6ab0ec617218a6

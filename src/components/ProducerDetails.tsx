@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { EventListProducer } from "./EventListProducer";
 
 export const ProducerDetails = () => {
+<<<<<<< HEAD
     const email = useParams<{ email: string }>().email;
     const [updateProducer, setUpdateProducer] = useState(false);
     const [addEvent, setAddEvent] = useState(false);
@@ -75,3 +76,7 @@ export const ProducerDetails = () => {
         <EventListProducer/>
     </>
 }
+=======
+    return <></>
+}
+>>>>>>> 406c578b17aba53b5dcd34211c6ab0ec617218a6

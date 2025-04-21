@@ -16,4 +16,8 @@ export type EventContextType = {
     
     events: MyEvent[],
     refresh: () => Promise<unknown>
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 406c578b17aba53b5dcd34211c6ab0ec617218a6
