@@ -22,7 +22,6 @@ export function useHttp<T>(url: string, method: HttpMethod){
             // data.forEach((e: any) => console.log(e));
             setData(result.data);
             
-            
         } catch(error) {
             setIsLoading(false);
             setIsError('error while fetching data');
