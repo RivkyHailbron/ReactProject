@@ -3,6 +3,7 @@ import { useHttp } from "../custom-hooks/useHttp"
 import { Producer } from "../types/Producer"
 import { useEffect, useState } from "react";
 import { EventListProducer } from "./EventListProducer";
+import "./ProducerDetails.css";
 
 export const ProducerDetails = () => {
     const email = useParams<{ email: string }>().email;
@@ -31,7 +32,7 @@ export const ProducerDetails = () => {
         }
         try {
             // await putRequest(updateProducer);
-            putRequest("", updateProducer);
+            putRequest(undefined, updateProducer);
             setUpdateProducer(false);
             getRequest();
             event.target.reset();

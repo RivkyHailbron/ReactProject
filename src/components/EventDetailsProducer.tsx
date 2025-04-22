@@ -3,6 +3,7 @@ import { MyEvent } from "../types/Event";
 import { useContext, useState } from "react";
 import { EventsContext } from "../context/Events.context";
 import { useHttp } from "../custom-hooks/useHttp";
+import "./EventDetailsProducer.css";
 
 export const EventDetailsProducer = () => {
     const { events , refresh} = useContext(EventsContext);
@@ -22,7 +23,7 @@ export const EventDetailsProducer = () => {
             producerEmail: event.target.producerEmail.value,
         }
         try {
-            await putEventRequest("",updateEvent)
+            await putEventRequest(undefined,updateEvent)
             refresh?.();
             setUpdateEvent(false);
             event.target.reset();
@@ -32,7 +33,7 @@ export const EventDetailsProducer = () => {
     }
     
     return (
-        <div>
+        <div className="event-details">
             <h1>פרטי אירוע  </h1>
             {event ? (
                 <div>

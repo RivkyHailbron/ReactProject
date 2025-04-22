@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react"
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { EventsContext } from "../context/Events.context";
-
+import "./EventListUser.css";
 export const EventListUser = () => {
     const { events, refresh } = useContext(EventsContext);
     const [searchTerm, setSearchTerm] = useState("");
-    
+
     useEffect(() => {
         if (refresh) refresh(); // קריאה ל- API בעת טעינת הקומפוננטה
     }, []);
@@ -18,7 +18,7 @@ export const EventListUser = () => {
         event.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    return <div>
+    return <div className="user-event-list">
         <h1>Event List</h1>
         <input
             type="text"

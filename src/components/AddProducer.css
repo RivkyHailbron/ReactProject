@@ -1,0 +1,50 @@
+.add-producer-form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.05);
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  .add-producer-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .add-producer-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .add-producer-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .add-producer-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .add-producer-form span {
+    display: block;
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+  

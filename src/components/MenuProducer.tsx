@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-
+import './MenuProducer.css';
 export const MenuProducer = () => {
 
     const [emailInput, setEmailInput] = useState('');
@@ -17,10 +17,11 @@ export const MenuProducer = () => {
     }
     return (
         <>
-            <div>
+            <div className="menu-producer">
                 {!showInputEmail &&
                     <>
-                        <NavLink to={"/producers/AddProducer"}><button>הרשמה</button></NavLink><br />
+                        <NavLink to={"/producers/AddProducer"}><button> הרשמה </button></NavLink>
+                        
                         <button onClick={() => setShowInputEmail(true)}>כניסה</button>
                     </>
                 }

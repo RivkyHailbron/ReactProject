@@ -3,6 +3,7 @@ import { useHttp } from "../custom-hooks/useHttp";
 import { MyEvent } from "../types/Event";
 import { useContext, useEffect, useState } from "react";
 import { EventsContext } from "../context/Events.context";
+import "./EventListProducer.css";
 
 export const EventListProducer = () => {
     const { email } = useParams();

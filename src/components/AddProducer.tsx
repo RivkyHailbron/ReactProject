@@ -1,7 +1,7 @@
 import { useHttp } from "../custom-hooks/useHttp";
 import { Producer } from "../types/Producer";
 import { toast } from "react-toastify";
-
+import "./AddProducer.css"
 export const AddProducer = () => {
     const { error, request } = useHttp<Producer>('/producer', 'post');
 
@@ -17,8 +17,7 @@ export const AddProducer = () => {
             description: event.target.description.value
         };
         try {
-            // await request(data);
-            request("", newProducer);
+            await request(undefined, newProducer);
             toast.success("נרשמת בהצלחה");
             form.reset();
         } catch (err) {
@@ -27,7 +26,7 @@ export const AddProducer = () => {
     };
 
     return <>
-        <form onSubmit={createProducer}>
+        <form onSubmit={createProducer} className="add-producer-form">
             <label htmlFor="name">שם מפיק/ה</label>
             <input type="text" name="name" id="name" /><br />
             <label htmlFor="email">מייל</label>

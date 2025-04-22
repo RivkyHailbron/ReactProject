@@ -1,0 +1,25 @@
+.event-details-user {
+    max-width: 500px; 
+    margin: 20px auto; 
+    padding: 20px; 
+    background-color: #dae7f7; /* צבע רקע בהיר */
+    border-radius: 8px; /* פינות מעוגלות */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.event-details-user h1 {
+    font-size: 24px; /* גודל טקסט לכותרת */
+    color: #333; /* צבע טקסט כהה */
+    margin-bottom: 10px; /* רווח מתחת לכותרת */
+}
+
+.event-details-user p {
+    font-size: 16px; /* גודל טקסט לפסקאות */
+    color: #555; /* צבע טקסט בינוני */
+    line-height: 1.5; /* רווח בין שורות */
+    margin-bottom: 15px; /* רווח מתחת לפסקאות */
+}
+
+.event-details-user strong {
+    color: #000; /* צבע טקסט כהה להדגשה */
+}

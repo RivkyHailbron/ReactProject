@@ -3,6 +3,7 @@ import { useHttp } from "../custom-hooks/useHttp";
 import { MyEvent } from "../types/Event";
 import { useContext } from "react";
 import { EventsContext } from "../context/Events.context";
+import "./AddEvent.css";
 
 export const AddEvent = () => {
   const { email } = useParams();
@@ -21,7 +22,7 @@ export const AddEvent = () => {
     };
 
     try {
-      await requestPostEvent("",newEvent);
+      await requestPostEvent(undefined,newEvent);
       if (refresh) await refresh(); // רענון הנתונים
       navigate(`/producers/ProducerDetails/${email}`); // חזרה לעמוד הרשימה
     } catch (error) {
@@ -30,7 +31,7 @@ export const AddEvent = () => {
   };
 
   return (
-    <form onSubmit={insertEvent}>
+    <form onSubmit={insertEvent} className="add-event-form">
       <h2>הוספת אירוע</h2>
       <label htmlFor="name">שם אירוע </label>
       <input type="text" name="name" required />

@@ -1,0 +1,70 @@
+.producer-event-list {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #dae7f7;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+.producer-event-list h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.producer-event-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.producer-event-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    margin-bottom: 12px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: background 0.2s;
+}
+
+.producer-event-list li:hover {
+    background-color: #f0f8ff;
+}
+
+.producer-event-list a {
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: 500;
+}
+
+.producer-event-list button {
+    background-color: #08eda4;
+    /* color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s; */
+}
+
+.producer-event-list button:hover {
+    background-color: #c0392b;
+}
+
+.producer-event-list>button {
+    display: block;
+    margin: 20px auto 0;
+    background-color: #3498db;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.producer-event-list>button:hover {
+    background-color: #2980b9;
+}
