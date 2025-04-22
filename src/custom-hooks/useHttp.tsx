@@ -7,28 +7,24 @@ const EventsInstance = axios.create({
 
 type HttpMethod = 'get' | 'post' | 'put' | 'delete';
 
-export function useHttp<T>(url: string, method: HttpMethod){
-    
+export function useHttp<T>(url: string, method: HttpMethod) {
+
     const [isLoading, setIsLoading] = useState(false);
     const [error, setIsError] = useState('');
     const [data, setData] = useState<T>();
 
-    const request = useCallback(async (...params: any[]) => {
+    const request = useCallback(async (dynamicUrl: string = url, ...params: any[]) => {
         setIsLoading(true);
         setIsError('');
         try {
-            const result = await EventsInstance[method]<T>(url, ...params);
-            setIsLoading(false);
-            // data.forEach((e: any) => console.log(e));
+            const result = await EventsInstance[method]<T>(dynamicUrl, ...params);
             setData(result.data);
-            
-<<<<<<< HEAD
-=======
-            
->>>>>>> 406c578b17aba53b5dcd34211c6ab0ec617218a6
-        } catch(error) {
+        } catch (error) {
             setIsLoading(false);
             setIsError('error while fetching data');
+        }
+        finally {
+            setIsLoading(false); // זה יבטיח שהמצב מתעדכן גם במקרה של שגיאה
         }
     }, []);
 
@@ -36,7 +32,7 @@ export function useHttp<T>(url: string, method: HttpMethod){
         if (method === 'get') {
             request();
         }
-    }, []);
-    
+    }, [method, url]);
+
     return { isLoading, error, data, request }
 }

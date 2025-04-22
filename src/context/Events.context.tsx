@@ -1,26 +1,29 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { EventContextType, MyEvent } from "../types/Event";
 import { useHttp } from "../custom-hooks/useHttp";
 
 export const EventsContext = createContext<Partial<EventContextType>>({});
 
-
 export const EventsProvider = (props: any) => {
-
     const { isLoading, error, data, request } = useHttp<MyEvent[]>('/event', 'get');
-    console.log("after useHttp", data);
+    const [eventsArr, setEventsArr] = useState<MyEvent[]>([]);
 
+    // אם data משתנה, נעדכן את eventsArr
+    useEffect(() => {
+        if (data) {
+            setEventsArr(data); // עדכון ה-state עם הנתונים החדשים
+        }
+    }, [data]); // הפונקציה תתרחש רק אם data משתנה
 
-    // const [eventsArr, setEventsArr] = useState<MyEvent[]>(data || []); // הגדרת משתנה סטייט לאירועים
-    // פונקציה לרענון הנתונים
     const refresh = async () => {
-        const response = await request(); // קריאה ל-API
-        // if (response != null) {
-        //     setEventsArr(response); // עדכון ה-state עם התשובה שהתקבלה
-        // }
+        const response = await request(); 
+        if (response != null) {
+            setEventsArr(response); // עדכון ה-state עם התשובה שהתקבלה
+        }
     };
+
     const contextValue: EventContextType = {
-        events: data!,
+        events: eventsArr,
         refresh: refresh
     };
 

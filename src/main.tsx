@@ -11,6 +11,7 @@ import { EventsProvider } from './context/Events.context.tsx'
 import { AddProducer } from './components/AddProducer.tsx'
 import { ProducerDetails } from './components/ProducerDetails.tsx'
 import { EventDetailsProducer } from './components/EventDetailsProducer.tsx'
+import { AddEvent } from './components/AddEvent.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="producers/AddProducer" element={<AddProducer />} />
             <Route path="producers/ProducerDetails/:email" element={<ProducerDetails />} />
             <Route path="producers/EventDetailsProducer/:id" element={<EventDetailsProducer />} />
+            <Route path="/producers/:email/addEvent" element={<AddEvent />} />
           </Route>
         </Routes>
       </EventsProvider>

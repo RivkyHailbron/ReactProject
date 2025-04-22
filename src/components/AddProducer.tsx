@@ -3,23 +3,22 @@ import { Producer } from "../types/Producer";
 import { toast } from "react-toastify";
 
 export const AddProducer = () => {
-<<<<<<< HEAD
-    const { request } = useHttp<Producer>('/producer', 'post');
+    const { error, request } = useHttp<Producer>('/producer', 'post');
 
-    const createProducer = async (event: React.FormEvent<HTMLFormElement>) => {
+    const createProducer = async (event: any) => {
         event.preventDefault();
 
         const form = event.currentTarget;
-        const formData = new FormData(form);
-        const data: Producer = {
-            name: formData.get('name') as string,
-            email: formData.get('email') as string,
-            phone: formData.get('phone') as string,
-            description: formData.get('description') as string
+        // const formData = new FormData(form);
+        const newProducer: Producer = {
+            name: event.target.name.value,
+            email: event.target.email.value,
+            phone: event.target.phone.value,
+            description: event.target.description.value
         };
         try {
             // await request(data);
-            request(data);
+            request("", newProducer);
             toast.success("נרשמת בהצלחה");
             form.reset();
         } catch (err) {
@@ -27,7 +26,7 @@ export const AddProducer = () => {
         }
     };
 
-    return (
+    return <>
         <form onSubmit={createProducer}>
             <label htmlFor="name">שם מפיק/ה</label>
             <input type="text" name="name" id="name" /><br />
@@ -39,11 +38,8 @@ export const AddProducer = () => {
             <input type="text" name="description" id="description" /><br />
             <button type="submit">הרשמה</button>
         </form>
-    );
-};
-=======
-    return <>
-        <form action=""></form>
+        {error && <span>{error}</span>}
+
     </>
-}
->>>>>>> 406c578b17aba53b5dcd34211c6ab0ec617218a6
+};
+

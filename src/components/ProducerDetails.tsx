@@ -5,11 +5,8 @@ import { useEffect, useState } from "react";
 import { EventListProducer } from "./EventListProducer";
 
 export const ProducerDetails = () => {
-<<<<<<< HEAD
     const email = useParams<{ email: string }>().email;
     const [updateProducer, setUpdateProducer] = useState(false);
-    const [addEvent, setAddEvent] = useState(false);
-
     const { data, request: getRequest } = useHttp<Producer>(`/producer/${email}`, 'get');
     const { isLoading, error, request: putRequest } = useHttp<Producer>(`/producer/${email}`, 'put');
     console.log("data", data);
@@ -34,7 +31,7 @@ export const ProducerDetails = () => {
         }
         try {
             // await putRequest(updateProducer);
-             putRequest(updateProducer);
+            putRequest("", updateProducer);
             setUpdateProducer(false);
             getRequest();
             event.target.reset();
@@ -73,10 +70,7 @@ export const ProducerDetails = () => {
                     </form>}
             </div>
         )}
-        <EventListProducer/>
+        <EventListProducer />
     </>
 }
-=======
-    return <></>
-}
->>>>>>> 406c578b17aba53b5dcd34211c6ab0ec617218a6
+
